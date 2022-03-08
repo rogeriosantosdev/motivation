@@ -17,6 +17,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         buttonSave.setOnClickListener(this)
+
     }
 
     override fun onClick(view: View) {
@@ -29,10 +30,12 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
     private fun handleSave(){
         val name = editName.text.toString()
 
+        //Inicia uma nova activity ou passa notificação de erro
+
         if(name != ""){
             startActivity(Intent(this, MainActivity::class.java))
         } else {
-            Toast.makeText(this, "Informe o seu nome", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.informe_o_nome, Toast.LENGTH_SHORT).show()
         }
     }
 }
