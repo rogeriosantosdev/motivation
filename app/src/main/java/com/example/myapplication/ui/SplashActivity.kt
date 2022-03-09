@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.myapplication.R
+import com.example.myapplication.infra.MotivationConstants
 import com.example.myapplication.infra.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_splash.*
 
@@ -43,7 +44,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         //Inicia uma nova activity ou passa notificação de erro
 
         if(name != ""){
-            mSecurityPreferences.storeString("name", name)
+            mSecurityPreferences.storeString(MotivationConstants.KEY.PERSON_NAME, name)
             startActivity(Intent(this, MainActivity::class.java))
         } else {
             Toast.makeText(this, R.string.informe_o_nome, Toast.LENGTH_SHORT).show()
