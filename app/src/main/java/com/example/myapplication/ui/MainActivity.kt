@@ -19,6 +19,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         mSecurityPreferences = SecurityPreferences(this)
         textName.text = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
 
+        supportActionBar?.hide()
+
+        buttonNewPhrase.setOnClickListener(this)
+        image_all.setOnClickListener(this)
+        image_happy.setOnClickListener(this)
+        image_morning.setOnClickListener(this)
+
 
     }
 
@@ -35,6 +42,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun handleFilter(id: Int) {
+
+        image_all.setColorFilter(R.color.white)
+        image_happy.setColorFilter(R.color.white)
+        image_morning.setColorFilter(R.color.white)
+
         when (id) {
             R.id.image_all -> {
                 image_all.setColorFilter(R.color.colorAccent)
