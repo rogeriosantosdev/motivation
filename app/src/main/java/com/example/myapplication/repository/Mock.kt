@@ -3,11 +3,14 @@ package com.example.myapplication.repository
 import com.example.myapplication.infra.MotivationConstants
 import java.util.*
 
-data class Phrase(val description: String, val category: Int){
+data class Phrase(val description: String, val category: Int)
 
+fun Int.random(): Int {
+    return Random().nextInt(this)
 }
 
 class Mock {
+
     private val ALL = MotivationConstants.PHRASEFILTER.ALL
     private val HAPPY = MotivationConstants.PHRASEFILTER.HAPPY
     private val MORNING = MotivationConstants.PHRASEFILTER.MORNING
@@ -28,11 +31,19 @@ class Mock {
         Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada!", MORNING)
     )
 
-    fun getPhrase(categoryId: Int): String{
+    /**
+     * Obtém frase aleatória de acordo com o filtro
+     * */
+    fun getPhrase(value: Int): String { 
 
-        val filtered = mListPhrases.filter{(it.category == categoryId) || categoryId == ALL}
-        val rand = Random().nextInt(mListPhrases.size)
+        val filtered = mListPhrases.filter { (it.category == value || value == ALL) }
 
+        // Número aleatório de 0 ao tamanho da lista retornada do filtro
+        val rand = (filtered.size).random()
+
+        // Retorna string
         return filtered[rand].description
+
     }
+
 }
