@@ -6,20 +6,26 @@ import android.view.View
 import com.example.myapplication.R
 import com.example.myapplication.infra.MotivationConstants
 import com.example.myapplication.infra.SecurityPreferences
+import com.example.myapplication.repository.Mock
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mSecurityPreferences: SecurityPreferences
+    private var mPhraseFilter: Int = MotivationConstants.PHRASEFILTER.ALL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
         mSecurityPreferences = SecurityPreferences(this)
         textName.text = mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME)
 
-        supportActionBar?.hide()
+        //Lógica inicial de seleção
+        image_all.setColorFilter(R.color.colorAccent)
+        handleNewPhrase()
 
         buttonNewPhrase.setOnClickListener(this)
         image_all.setOnClickListener(this)
@@ -50,17 +56,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (id) {
             R.id.image_all -> {
                 image_all.setColorFilter(R.color.colorAccent)
+                mPhraseFilter = MotivationConstants.PHRASEFILTER.ALL
             }
             R.id.image_happy -> {
                 image_happy.setColorFilter(R.color.colorAccent)
+                mPhraseFilter = MotivationConstants.PHRASEFILTER.HAPPY
             }
             R.id.image_morning -> {
                 image_morning.setColorFilter(R.color.colorAccent)
+                mPhraseFilter = MotivationConstants.PHRASEFILTER.MORNING
             }
         }
     }
 
     private fun handleNewPhrase() {
-
+        textPhrase.text = Mock().getPhrase(mPhraseFilter)
     }
 }

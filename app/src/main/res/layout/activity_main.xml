@@ -59,6 +59,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="32dp"
+        android:layout_margin="16dp"
+        android:textAlignment="center"
         android:text="Frase"
         android:textSize="22sp" />
 
