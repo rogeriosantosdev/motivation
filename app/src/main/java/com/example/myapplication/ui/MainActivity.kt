@@ -3,6 +3,7 @@ package com.example.myapplication.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import com.example.myapplication.infra.MotivationConstants
 import com.example.myapplication.infra.SecurityPreferences
@@ -56,16 +57,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when (id) {
             R.id.image_all -> {
-                image_all.setColorFilter(R.color.colorAccent)
                 mPhraseFilter = MotivationConstants.PHRASEFILTER.ALL
+                image_all.setColorFilter(
+                    ContextCompat.getColor(this, R.color.colorAccent)
+                )
             }
             R.id.image_happy -> {
-                image_happy.setColorFilter(R.color.colorAccent)
                 mPhraseFilter = MotivationConstants.PHRASEFILTER.HAPPY
+                image_happy.setColorFilter(
+                    ContextCompat.getColor(this, R.color.colorAccent)
+                )
             }
             R.id.image_morning -> {
-                image_morning.setColorFilter(R.color.colorAccent)
                 mPhraseFilter = MotivationConstants.PHRASEFILTER.MORNING
+                image_morning.setColorFilter(
+                    ContextCompat.getColor(this, R.color.colorAccent)
+                )
             }
         }
     }

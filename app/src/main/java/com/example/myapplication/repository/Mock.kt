@@ -34,7 +34,7 @@ class Mock {
     /**
      * Obtém frase aleatória de acordo com o filtro
      * */
-    fun getPhrase(value: Int): String { 
+    fun getPhrase(value: Int): String {
 
         val filtered = mListPhrases.filter { (it.category == value || value == ALL) }
 
