@@ -60,7 +60,7 @@
         android:layout_centerVertical="true"
         android:layout_margin="16dp"
         android:layout_marginTop="32dp"
-        android:text="Frase"
+        android:text="@string/phrase_main"
         android:textAlignment="center"
         android:textSize="22sp" />
 

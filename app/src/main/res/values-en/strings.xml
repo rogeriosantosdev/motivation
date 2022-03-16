@@ -1,0 +1,9 @@
+<resources>
+    <string name="fraseInicio">Let\'s get started?</string>
+    <string name="save_button">Save</string>
+    <string name="qual_o_seu_nome">What\'s your name?</string>
+    <string name="app_name">Motivation</string>
+    <string name="informe_o_nome">Write your name correctly</string>
+    <string name="new_phrase">New phrase</string>
+    <string name="phrase_main">Phrase</string>
+</resources>

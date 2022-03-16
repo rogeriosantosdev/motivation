@@ -5,4 +5,5 @@
     <string name="qual_o_seu_nome">Qual o seu nome?</string>
     <string name="informe_o_nome">Informe o seu nome corretamente</string>
     <string name="new_phrase">Nova Frase</string>
+    <string name="phrase_main">Frase</string>
 </resources>
